@@ -1,21 +1,21 @@
 
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project2
-  labels:
-    app: web
+  name: project2-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: web
+      app: project2
   template:
     metadata:
       labels:
-        app: web
+        app: project2
     spec:
       containers:
-        - name: project2
-          image: quay.io/ran_ju_vincie/cs401_project2
-          ports:
-            - containerPort: 5005
+      - name: project2
+        image: quay.io/ran_ju_vincie/cs401_project2
+        ports:
+        - containerPort: 5005
